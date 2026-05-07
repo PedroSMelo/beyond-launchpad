@@ -1,11 +1,18 @@
 import { Phone, Mail, Instagram, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 import logo from "@/assets/beyond-logo.png";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card/40">
       <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="grid gap-10 md:grid-cols-3"
+        >
           <div>
             <img src={logo} alt="Beyond Solutions" className="h-10 w-auto invert" />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
@@ -34,7 +41,7 @@ export function Footer() {
             </p>
             <p className="text-muted-foreground">CNPJ: 48.560.381/0001-90</p>
           </div>
-        </div>
+        </motion.div>
         <div className="mt-12 pt-6 border-t border-border text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} Beyond Solutions Brasil. Todos os direitos reservados.
         </div>
