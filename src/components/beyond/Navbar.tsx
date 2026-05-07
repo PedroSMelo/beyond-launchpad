@@ -28,11 +28,11 @@ export function Navbar() {
         scrolled ? "glass shadow-lg" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
-        <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="Beyond Solutions Brasil" className="h-9 w-auto invert" />
+      <nav className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 gap-3">
+        <a href="#inicio" className="flex items-center gap-2 shrink-0">
+          <img src={logo} alt="Beyond Solutions Brasil" className="h-8 sm:h-9 w-auto invert" />
         </a>
-        <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+        <ul className="hidden lg:flex items-center gap-7 text-sm font-medium text-muted-foreground">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="hover:text-foreground transition-colors">
@@ -43,7 +43,7 @@ export function Navbar() {
         </ul>
         <a
           href="#contato"
-          className="inline-flex items-center rounded-md bg-cta px-4 py-2.5 text-sm font-semibold text-cta-foreground cta-glow hover:brightness-110 transition"
+          className="inline-flex items-center rounded-md bg-cta px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-cta-foreground cta-glow hover:brightness-110 transition whitespace-nowrap"
         >
           FAÇA UM ORÇAMENTO
         </a>
