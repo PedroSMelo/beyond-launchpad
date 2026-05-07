@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { Send } from "lucide-react";
+import { motion } from "framer-motion";
 
 const schema = z.object({
   nome: z.string().trim().min(2, "Informe seu nome").max(100),
@@ -43,7 +44,13 @@ export function ContactForm() {
   return (
     <section id="contato" className="py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
           <p className="text-sm font-semibold uppercase tracking-wider text-cta">Orçamento</p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
             Vamos construir sua próxima solução
@@ -51,9 +58,16 @@ export function ContactForm() {
           <p className="mt-4 text-muted-foreground">
             Preencha os dados e nossa equipe responderá em até 24 horas úteis.
           </p>
-        </div>
+        </motion.div>
 
-        <form onSubmit={onSubmit} className="glass mt-10 rounded-2xl p-6 sm:p-8 space-y-5">
+        <motion.form
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          onSubmit={onSubmit}
+          className="glass mt-10 rounded-2xl p-6 sm:p-8 space-y-5"
+        >
           <div className="grid sm:grid-cols-2 gap-5">
             <Field label="Nome" name="nome" placeholder="Seu nome completo" />
             <Field label="Empresa" name="empresa" placeholder="Nome da empresa" />
@@ -87,7 +101,7 @@ export function ContactForm() {
             <Send className="h-4 w-4" />
             {loading ? "Enviando..." : "Enviar Solicitação de Orçamento"}
           </button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

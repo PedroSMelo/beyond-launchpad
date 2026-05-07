@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import logo from "@/assets/beyond-logo.png";
 
 const links = [
@@ -18,7 +19,10 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled ? "glass shadow-lg" : "bg-transparent"
       }`}
@@ -43,6 +47,6 @@ export function Navbar() {
           FAÇA UM ORÇAMENTO
         </a>
       </nav>
-    </header>
+    </motion.header>
   );
 }
