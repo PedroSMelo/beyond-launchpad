@@ -1,20 +1,25 @@
 import { Phone, Mail, Instagram, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from "@/assets/beyond-logo.png";
+import { MountainPeaks } from "./MountainPeaks";
+import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card/40">
+    <footer className="relative bg-card/40">
+      <MountainPeaks
+        variant="line"
+        className="absolute top-0 inset-x-0 w-full h-[clamp(0.75rem,2vh,1.5rem)] text-border"
+      />
       <div className="mx-auto max-w-7xl px-6 py-14">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: false, amount: 0.2, margin: "-60px" }}
           transition={{ duration: 0.6 }}
           className="grid gap-10 md:grid-cols-3"
         >
           <div>
-            <img src={logo} alt="Beyond Solutions" className="h-10 w-auto invert" />
+            <BrandLogo size="lg" showSubtitle />
             <p className="mt-4 text-sm text-muted-foreground max-w-xs">
               Soluções tecnológicas que escalam negócios. Brasília, DF.
             </p>

@@ -33,8 +33,8 @@ function Index() {
       <Solutions />
       <Problems />
       <Cases />
-      <Partners />
       <ContactForm />
+      <Partners />
       <Footer />
       <Toaster theme="dark" position="top-right" />
     </main>
