@@ -1,26 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar } from "@/components/beyond/Navbar";
+import { Hero } from "@/components/beyond/Hero";
+import { Solutions } from "@/components/beyond/Solutions";
+import { Cases } from "@/components/beyond/Cases";
+import { Partners } from "@/components/beyond/Partners";
+import { ContactForm } from "@/components/beyond/ContactForm";
+import { Footer } from "@/components/beyond/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Beyond Solutions Brasil — Tecnologia que escala negócios" },
+      {
+        name: "description",
+        content:
+          "Desenvolvimento de sistemas, identidade visual, consultoria em TI e engenharia de redes. Soluções escaláveis para sua empresa.",
+      },
+      { property: "og:title", content: "Beyond Solutions Brasil" },
+      { property: "og:description", content: "Transformamos necessidades de negócio em soluções escaláveis." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      <Solutions />
+      <Cases />
+      <Partners />
+      <ContactForm />
+      <Footer />
+      <Toaster theme="dark" position="top-right" />
+    </main>
+  );
 }
