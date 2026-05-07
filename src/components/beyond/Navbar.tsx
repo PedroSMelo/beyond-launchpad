@@ -5,6 +5,7 @@ import logo from "@/assets/beyond-logo.png";
 const links = [
   { href: "#inicio", label: "Início" },
   { href: "#solucoes", label: "Soluções" },
+  { href: "#solucionamos", label: "O que Solucionamos" },
   { href: "#cases", label: "Cases" },
   { href: "#parceiros", label: "Parceiros" },
 ];
